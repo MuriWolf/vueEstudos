@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        .box {
+            display: inline-block;
+            padding: 100px 0;
+            width: 300px;
+            margin: 20px;
+            text-align: center;
+            background-color: #d3d3d3;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello, Vue :)</h1>
+
+    <div id="app">
+        
+        <button v-on:click="idade++">Increase age!</button>
+        <button v-on:click="idade--">Decrese age!</button>
+        <button v-on:click="changeName('João')">Change name</button>
+        <br>
+        <button @click="toogleShowProfile">
+            <span v-if="showProfile">Hide profile</span>
+            <span v-else="showProfile">See profile</span>
+        </button>
+
+        <div v-if="showProfile">
+            <ul>
+                <li v-for="profile in profiles">
+                    {{ profile.name }} {{ profile.occupation }} <img :src="profile.photo" alt="profile.name">
+                </li>
+            </ul>
+        </div>
+        <div v-else>
+            <h3>Profile is hidden!</h3>
+        </div>
+        <div class="box" @mouseover="handleEvent($event, 5)">Mouseover (enter)</div>
+        <div class="box" @mouseleave="handleEvent">Mouseleave</div>
+        <div class="box" @dblclick="handleEvent">Dblclick</div>
+        <div class="box" @mousemove="handleMouseMove">MouseMove - X: {{ x }} - Y: {{ y }}</div>
+    </div>
+
+
+    <!-- O vue só funciona dentro da div com o id "app" -->
+    <!-- <p>{{ nome }}</p> -->
+
+    <script src="app.js"></script>
+</body>
+</html>

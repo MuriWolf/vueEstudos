@@ -3,13 +3,17 @@
 </template>
 
 <script>
-import { onMounted } from 'vue';
+// import { onMounted } from 'vue';
 
 export default {
-    setup() {
-        onMounted(() => {
-            console.log("Site montado com sucesso!");
-        })
+    // setup() {
+    //     onMounted(() => {
+    //         console.log("Site montado com sucesso!");
+    //     })
+    // }
+    
+    monted() {
+        console.log("montado");
     }
 }
 </script>
