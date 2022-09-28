@@ -16,36 +16,78 @@
             background-color: #d3d3d3;
             user-select: none;
         }
+
+        body {
+            background-color: #eee;
+            max-width: 960px;
+            margin: 20px auto;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        p, h3, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style-type: none;
+            background-color: #fff;
+            margin: 20px auto;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        img {
+            max-height: 150px;
+        }
+
+        .fav {
+            background-color: #dfdf2b;
+            color: white;
+        }
+
     </style>
 </head>
 <body>
     <h1>Hello, Vue :)</h1>
 
     <div id="app">
+
         
         <button v-on:click="idade++">Increase age!</button>
         <button v-on:click="idade--">Decrese age!</button>
         <button v-on:click="changeName('João')">Change name</button>
         <br>
-        <button @click="toogleShowProfile">
-            <span v-if="showProfile">Hide profile</span>
-            <span v-else="showProfile">See profile</span>
-        </button>
 
+        <!-- <h1>{{ filteredProfiles }}</h1> -->
+        
         <div v-if="showProfile">
             <ul>
-                <li v-for="profile in profiles">
-                    {{ profile.name }} {{ profile.occupation }} <img :src="profile.photo" alt="profile.name">
+                <li v-for="profile in filteredProfiles" :class="{ fav: profile.isFav }" @click="toogleFav(profile)" >
+                    <h3>{{ profile.name }}</h3>
+                    <h3>{{ profile.occupation }}</h3>
+                    <img :src="profile.photo" alt="profile.name">
+                    <p>{{ profile.isFav }} </p>
                 </li>
             </ul>
         </div>
         <div v-else>
             <h3>Profile is hidden!</h3>
         </div>
-        <div class="box" @mouseover="handleEvent($event, 5)">Mouseover (enter)</div>
+        <button @click="toogleShowProfile">
+            <span v-if="showProfile">Hide profile</span>
+            <span v-else="showProfile">See profile</span>
+        </button>
+
+        <!-- <div class="box" @mouseover="handleEvent($event, 5)">Mouseover (enter)</div>
         <div class="box" @mouseleave="handleEvent">Mouseleave</div>
         <div class="box" @dblclick="handleEvent">Dblclick</div>
-        <div class="box" @mousemove="handleMouseMove">MouseMove - X: {{ x }} - Y: {{ y }}</div>
+        <div class="box" @mousemove="handleMouseMove">MouseMove - X: {{ x }} - Y: {{ y }}</div> -->
+
+
     </div>
 
 
