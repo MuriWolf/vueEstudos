@@ -19,6 +19,16 @@
                 "webdev",
                 "coding"
             ]
+        },
+        {
+            "id": 3,
+            "title": "How to get a job",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur felis libero, in porta magna vestibulum eget. Suspendisse malesuada dui in ligula imperdiet pharetra. Vivamus felis nisl, gravida non porttitor eget, molestie sed lorem. Integer finibus dui arcu, nec egestas nulla posuere nec. Quisque eu ex nec dolor egestas condimentum ac ac nulla. Phasellus ut cursus ligula. Etiam vel laoreet erat. Vestibulum sit amet erat id velit sodales efficitur id in sem. Quisque ac cursus nunc. Aenean feugiat ex metus, at tristique elit accumsan eu. Nam placerat dolor sit amet lorem aliquet congue.",
+            "tags": [
+                "job",
+                "webdev",
+                "coding"
+            ]
         }
     ]
 }
